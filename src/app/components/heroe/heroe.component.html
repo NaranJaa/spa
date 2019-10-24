@@ -1,0 +1,27 @@
+<h1>{{heroe.nombre}}</h1>
+<small>{{heroe.aparicion}}</small>
+
+<div class="row">
+  <div class="col-md-4">
+    <img [src]="heroe.img" class="img-fluid" alt="">
+    <br><br>
+   
+    <button (click)="regresarHome()"
+    type="button" class="btn btn-outline-primary btn-block">
+      Regresar..
+    </button>
+
+  </div>
+
+  <div class="col-md-8">
+    <h3>Nombre del heroe</h3>
+    <hr>
+    <p>
+      bio del drone
+      
+    </p>
+
+    <div>
+      <img src="" alt="">
+    </div>
+  </div>
