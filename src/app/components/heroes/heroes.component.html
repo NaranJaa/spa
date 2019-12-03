@@ -5,19 +5,7 @@
 <hr>
 
 <div class="card-columns">
-  <div class="card"  *ngFor="let heroe of heroes; let i = index">
-    <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
-    <div class="card-body">
-      <h5 class="card-title">{{ heroe.nombre}}</h5>
-      <p class="card-text">{{heroe.bio}}</p>
-      <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+  <!--  este es el padre del component app-heroe-tarjeta y como le puse in input a la variable declarada en su componente lo puedo inicializar desde aca (desde el padre) -->
 
-      <button (click)="verHeroe(i)"
-      type="button" class="btn btn-outline-primary btn-block">
-        Ver mas..
-      </button>
-
-      <!--a [routerLink]="['/heroe', i ]" class="btn btn-outline-primary">Ver mas..</a> -->
-    </div>
-  </div>
-</div>
+  <app-heroe-tarjeta [heroe]="foo" [index]="i" *ngFor="let foo of heroes; let i = index"></app-heroe-tarjeta>
+</div> 
