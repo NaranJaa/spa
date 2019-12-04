@@ -7,5 +7,5 @@
 <div class="card-columns">
   <!--  este es el padre del component app-heroe-tarjeta y como le puse in input a la variable declarada en su componente lo puedo inicializar desde aca (desde el padre) -->
 
-  <app-heroe-tarjeta [heroe]="foo" [index]="i" *ngFor="let foo of heroes; let i = index"></app-heroe-tarjeta>
+  <app-heroe-tarjeta (heroeSeleccionado)="verHeroe($event)" [heroe]="foo" [index]="i" *ngFor="let foo of heroes; let i = index"></app-heroe-tarjeta>
 </div> 

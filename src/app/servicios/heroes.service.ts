@@ -69,9 +69,15 @@ export class HeroesService {
       const resheroes:Heroe[] = [];
       termino = termino.toLowerCase();
 
-      const heroeEncontrado = this.heroes.find(heroe => (heroe.nombre).toLowerCase() === termino);
-      if(heroeEncontrado){
-        resheroes.push(heroeEncontrado);                  
+      for(let i=0; i<this.heroes.length; i++) {
+        let heroe = this.heroes[i];
+
+        let nombre = heroe.nombre.toLowerCase();
+
+        if(nombre.indexOf(termino) >=0 ) {
+          heroe.idx = i;
+          resheroes.push(heroe);
+        }
       }
 
       return resheroes;
@@ -85,5 +91,5 @@ export interface Heroe {
     img: string;
     aparicion: string;
     casa: string;
-  
+    idx?: number;
 }
